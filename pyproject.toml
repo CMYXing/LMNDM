@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LMNDM"
+version = "2.0.0"
+description = "PyTorch inference for case-level metastatic scoring of pulmonary nodules"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "LMNDM contributors"}
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+  "numpy>=1.24",
+  "SimpleITK>=2.5.3",
+  "torch>=2.4.1",
+]
+
+[project.optional-dependencies]
+notebook = [
+  "ipykernel>=6",
+  "jupyterlab>=4",
+  "matplotlib>=3.8",
+]
+test = [
+  "pytest>=8",
+]
+
+[project.scripts]
+lmndm = "LMNDM.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["LMNDM*"]
+exclude = ["tests*", "backup*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "e2e: full-volume inference that is disabled by default",
+]

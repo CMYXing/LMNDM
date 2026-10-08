@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Environments and notebooks
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Local outputs and caches
+output/
+outputs/
+*.log
+.DS_Store
+
+# Local-only research material
+models/detection/
+models/false_positive_reduction/
+backup/
+docs/
+DATA_CARD.md
+MODEL_CARD.md
+AGENTS.md
+
+# Editors
+.idea/
+.vscode/
